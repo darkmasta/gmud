@@ -1,4 +1,4 @@
-module.exports = {
+{
 	Extends: '/Living', 
 
 	create: function(){

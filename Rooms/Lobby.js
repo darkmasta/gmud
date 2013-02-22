@@ -1,15 +1,17 @@
-module.exports = {
+ {
 
 	Extends: 'Room',
 	
-		create: function(){
+	create: function(){
 		this.parent();
-		this.set("name", "Lobby");
-		this.set("description", "Login with 'connect name password' or register with 'register name'");
 	},
 
 	init: function(){
 		this.parent();
+		
+		this.setDefault("name", "Lobby");
+		this.setDefault("description", "Login with 'connect name password' or register with 'register name'");
+
 		this.addCommand("connect @text", "connect");
 		this.addCommand("register @text", "register");
 	},
@@ -25,7 +27,7 @@ module.exports = {
 			who.send("Wrong login credentials");
 			return;
 		}
-		who.send("You feel the slight sensation of being transfered into another body...");
+		who.send("You feel the slight sensation of being transferred into another body...");
 		who.controller.setControl(user.character);
 		user.character.force("look");
 	},

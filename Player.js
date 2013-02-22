@@ -1,14 +1,16 @@
-module.exports = {
+ {
 	Extends: 'Living', 
 
 	create: function(){
 		this.parent();
-		this.set("name", "Player");
-		this.set("description", "A new player");
 	},
 
 	init: function(){
 		this.parent();
+		
+		this.setDefault("name", "Player");
+		this.setDefault("description", "A new player");
+
 		this.addCommand("save", "saveWorld");
 		this.addCommand("reload", "reloadWorld");
 	},

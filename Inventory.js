@@ -1,1 +1,1 @@
-module.exports = { Extends: Thing }
+{ Extends: Thing }

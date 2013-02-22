@@ -1,18 +1,20 @@
-module.exports = {
+{
 	Extends: Thing,
  
 	controller: null,
 
 	create: function(){
 		this.parent();
-		this.set("name", "Being");
-		this.set("description", "It's alive!");
-		this.set("look_place", "standing here.");
 		this.set("inventory", this.world.makeThing("Inventory"));
 	},
 	
 	init: function(){
 		this.parent();
+
+		this.setDefault("name", "Being");
+		this.setDefault("description", "It's alive!");
+		this.setDefault("look_place", "standing here.");
+
 		this.addCommand("look @thing", "lookAtItem");
 		this.addCommand("look", "lookAtRoom");
 		this.addCommand("give @thing to @thing and say @text", "test");

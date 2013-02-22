@@ -1,4 +1,4 @@
-module.exports = { 
+ { 
 
 	Extends: '/WarpTarget',
 	Singleton: true,
@@ -6,8 +6,16 @@ module.exports = {
 	exits: [],
 
 	create: function(){
-		this.set('name', 'Room');
-		this.set('description', "You're standing in an unrendered room. It smells new.");
+		this.parent();
+	},
+
+	init: function(){
+		this.parent();
+		
+		this.setDefault('name', 'Room');
+		this.setDefault('description', "You're standing in an unrendered room. It smells new.");
+
+		this.addCommand("recreate", "recreate");
 	},
 
 	addExit: function(name, short_name, opposite, warp_target){
@@ -34,5 +42,10 @@ module.exports = {
 	
 	warp: function(who){
 		this.add(who);	
+	},
+
+	recreate: function(who){
+		this.emit("The room shimmers as it gets replaced by another. In the blink of an eye it's over, too quick for anyone to notice.");
+		this.create();	
 	}
 }
