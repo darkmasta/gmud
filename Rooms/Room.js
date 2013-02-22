@@ -15,7 +15,7 @@ module.exports = {
 		this[method_name] = function(who){
 			who.emit("%You walk%s to the "+name);
 			if(typeof(warp_target) == "string"){
-				this.world.makeThing(warp_target).warp(who);
+				this.makeThing(warp_target).warp(who);
 			}else{
 				warp_target.warp(who);	
 			}

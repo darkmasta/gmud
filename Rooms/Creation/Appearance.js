@@ -11,8 +11,8 @@ module.exports = {
 	init: function(){
 		this.parent();
 		this.addCommand("desc @text", "desc");
-		this.addExit("back", "b", "next room", "Rooms/Creation/Name");
-		this.next 
+		this.addExit("back", "b", "next room", "Name");
+		this.next = this.makeThing("Powerlevels");
 	},
 	
 	desc: function(who, text){

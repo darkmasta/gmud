@@ -6,14 +6,12 @@ module.exports = {
 		this.parent();
 		this.set("name", "Lobby");
 		this.set("description", "Login with 'connect name password' or register with 'register name'");
-		this.add(this.world.makeThing("Items/Item"));
 	},
 
 	init: function(){
 		this.parent();
 		this.addCommand("connect @text", "connect");
 		this.addCommand("register @text", "register");
-		this.addExit("north", "n", "south", "Rooms/Help");
 	},
 	
 	connect: function(who, text){

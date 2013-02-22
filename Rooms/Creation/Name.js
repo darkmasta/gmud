@@ -11,7 +11,7 @@ module.exports = {
 	init: function(){
 		this.parent();
 		this.addCommand("name @text", "chooseName");
-		this.next = this.world.makeThing("Rooms/Creation/Appearance");
+		this.next = this.makeThing("Appearance");
 	},
 	
 	chooseName: function(who, text){

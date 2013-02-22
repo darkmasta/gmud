@@ -51,7 +51,7 @@ module.exports = {
 		var container = who.get('_container');
 		if(container){
 			who.send_raw(container.getName(), "label", true);
-			who.send(container.get('description'));
+			who.send(container.getDescription());
 			if(!container.get("contents_hidden")){
 				var things = container.filter("Living", true).map(function(thing){
 					var name = thing.getName();
